@@ -1,0 +1,44 @@
+<!-- views/reservation-form.ejs -->
+
+<h1>Reservation Form</h1>
+
+<form action="/users/reserve" method="post">
+  <label for="nom_person">Nom:</label>
+  <input type="text" name="nom_person" required>
+
+  <label for="prenom_person">Prenom:</label>
+  <input type="text" name="prenom_person" required>
+
+  <label for="class_person">Class:</label>
+  <input type="text" name="class_person" required>
+
+  <label for="category">Category:</label>
+  <select name="category" required>
+    <% categories.forEach(category => { %>
+      <option value="<%= category.id_category %>"><%= category.name_category %></option>
+    <% }); %>
+  </select>
+
+  <label for="ville_depart">Ville de Départ:</label>
+  <input type="text" name="ville_depart" required>
+
+  <label for="ville_arrive">Ville d'Arrivée:</label>
+  <input type="text" name="ville_arrive" required>
+
+  <label for="total_price_p">Total Price:</label>
+  <input type="number" name="total_price_p" required>
+
+  <label for="time_souhaite">Time Souhaite:</label>
+  <input type="time" name="time_souhaite" required>
+
+  <label for="date_souhaite">Date Souhaite:</label>
+  <input type="date" name="date_souhaite" required>
+
+  <label for="num_passport">Num Passport:</label>
+  <input type="number" name="num_passport" required>
+
+  <label for="nb_person">Number of Persons:</label>
+  <input type="number" name="nb_person" required>
+
+  <button type="submit">Reserve Now</button>
+</form>
